@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Available Trips - ATBU Bus Booking</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="topbar">
+    <h1>ATBU Bus Booking</h1>
+    <button id="logoutBtn">Logout</button>
+</header>
+
+<main class="container">
+    <h2>Available Trips</h2>
+    <div id="tripsList" class="trips-list"></div>
+
+    <div id="seatMapSection" class="hidden">
+        <h2>Select a Seat</h2>
+        <div id="seatMap" class="seat-map"></div>
+        <button id="confirmBookingBtn">Proceed to Payment</button>
+    </div>
+
+    <p class="form-message" id="tripsMessage"></p>
+</main>
+
+<script src="../js/trips.js"></script>
+</body>
+</html>

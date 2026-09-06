@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - ATBU Bus Booking</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+<header class="topbar">
+    <h1>ATBU Bus Booking — Admin</h1>
+    <button id="logoutBtn">Logout</button>
+</header>
+
+<main class="container admin-container">
+
+    <section class="summary-cards" id="summaryCards"></section>
+
+    <div class="admin-grid">
+
+        <section class="admin-card">
+            <h2>Add Route</h2>
+            <form id="routeForm">
+                <label>Origin</label>
+                <input type="text" id="origin" required>
+                <label>Destination</label>
+                <input type="text" id="destination" required>
+                <label>Distance (km)</label>
+                <input type="number" step="0.1" id="distance_km">
+                <button type="submit">Add Route</button>
+            </form>
+            <div id="routesList" class="mini-list"></div>
+        </section>
+
+        <section class="admin-card">
+            <h2>Add Bus</h2>
+            <form id="busForm">
+                <label>Plate Number</label>
+                <input type="text" id="plate_number" required>
+                <label>Capacity</label>
+                <input type="number" id="capacity" value="18" required>
+                <button type="submit">Add Bus</button>
+            </form>
+            <div id="busesList" class="mini-list"></div>
+        </section>
+
+        <section class="admin-card wide">
+            <h2>Schedule Trip</h2>
+            <form id="tripForm">
+                <label>Route</label>
+                <select id="route_id" required></select>
+
+                <label>Bus</label>
+                <select id="bus_id" required></select>
+
+                <label>Departure Time</label>
+                <input type="datetime-local" id="departure_time" required>
+
+                <label>Fare (₦)</label>
+                <input type="number" step="0.01" id="fare" required>
+
+                <button type="submit">Create Trip</button>
+            </form>
+            <p class="form-message" id="tripFormMessage"></p>
+        </section>
+
+        <section class="admin-card wide">
+            <h2>All Trips</h2>
+            <table class="admin-table" id="tripsTable">
+                <thead>
+                    <tr><th>Route</th><th>Bus</th><th>Departure</th><th>Fare</th><th>Booked</th><th>Status</th><th></th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section class="admin-card wide">
+            <h2>All Bookings</h2>
+            <table class="admin-table" id="bookingsTable">
+                <thead>
+                    <tr><th>Reference</th><th>Passenger</th><th>Route</th><th>Seat</th><th>Departure</th><th>Status</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+    </div>
+</main>
+
+<script src="../js/admin.js"></script>
+</body>
+</html>
